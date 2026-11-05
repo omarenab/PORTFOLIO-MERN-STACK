@@ -20,7 +20,8 @@
     "multer": "^2.0.2",
     "node-cache": "^5.1.2",
     "nodemon": "^3.1.10",
-    "resend": "^6.34.1"
+    "resend": "^6.34.1",
+    "validator": "^13.15.35"
   },
   "type": "commonjs"
 }
