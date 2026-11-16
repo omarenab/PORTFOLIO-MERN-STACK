@@ -14,12 +14,19 @@ const corsMiddleWare = require("./middlewares/cors.middleware.js");
 const connectDB = require("./config/db.config.js");
 const path = require("path");
 
-
 const PORT = 8000;
 const app = express();
 app.use(corsMiddleWare);
 app.use(express.json());
 app.use("/assets", express.static(path.join(__dirname, "assets")));
+//HEALTH CHECK ENDPOINT FOR REFRESHING SERVER
+app.get("api/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "Server is running",
+    timestamp: new Date().toISOString(),
+  });
+});
 
 app.use("/api/home", homeRoute);
 app.use("/api/about", aboutRoute);
