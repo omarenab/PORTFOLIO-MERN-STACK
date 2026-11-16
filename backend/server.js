@@ -20,7 +20,7 @@ app.use(corsMiddleWare);
 app.use(express.json());
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 //HEALTH CHECK ENDPOINT FOR REFRESHING SERVER
-app.get("api/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: "OK",
     message: "Server is running",
